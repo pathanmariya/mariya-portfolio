@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <title>Digital Growth | UK Digital Marketing Agency for Business Growth</title>
+
+    <!-- SEO Meta -->
+    <meta name="description" content="Digital Growth is a UK-based digital marketing agency helping businesses grow through SEO, paid advertising, social media, automation, and data-driven strategies." />
+    <meta name="keywords" content="digital marketing agency uk, seo services uk, google ads management uk, social media marketing uk, paid ads uk" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Digital Growth" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-navy: #0B1F3A;
+            --background: #F5F7FA;
+            --text-dark: #1A1A1A;
+            --accent-green: #1F7A5F;
+            --footer-dark: #0F172A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+        }
+
+         /* ================= HEADER ================= */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #E5E7EB;
+      padding: 18px 70px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      color: var(--primary-navy);
+      letter-spacing: 1px;
+    }
+
+    /* NAV MENU */
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-menu li {
+      position: relative;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--primary-navy);
+    }
+
+    .nav-menu a:hover {
+      color: var(--accent-green);
+    }
+
+    /* ================= MEGA MENU ================= */
+    .mega-menu:hover .mega-dropdown {
+      display: flex;
+    }
+
+    .mega-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 650px;
+      background: #ffffff;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* LEFT COLUMN */
+    .mega-categories {
+      width: 40%;
+      background: #F5F7FA;
+      list-style: none;
+      padding: 10px 0;
+    }
+
+    .mega-categories li {
+      padding: 14px 20px;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      color: var(--primary-navy);
+      cursor: pointer;
+    }
+
+    .mega-categories li:hover,
+    .mega-categories li.active {
+      background: #ffffff;
+    }
+
+    /* RIGHT COLUMN */
+    .mega-content {
+      width: 60%;
+      padding: 22px;
+    }
+
+    .mega-panel {
+      display: none;
+    }
+
+    .mega-panel.active {
+      display: block;
+    }
+
+    .mega-panel a {
+      display: block;
+      padding: 10px 0;
+      font-size: 14px;
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+
+    .mega-panel a:hover {
+      color: var(--accent-green);
+    }
+
+
+        /* ================= HERO ================= */
+         .hero {
+  padding: 150px 90px;
+  background:
+    radial-gradient(1200px 400px at 10% 10%, rgba(31,122,95,0.08), transparent 60%),
+    linear-gradient(180deg, #F5F7FA 0%, #FFFFFF 100%);
+}
+
+    .hero h1 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 56px;
+      font-weight: 800;
+      color: var(--primary-navy);
+      max-width: 900px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 800px;
+      font-size: 18px;
+      margin-bottom: 36px;
+    }
+	
+	.hero-actions {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.hero-trust {
+  display: flex;
+  gap: 28px;
+  margin-top: 28px;
+  font-size: 14px;
+  color: #334155;
+}
+
+        .btn-primary {
+  background: #1F7A5F;
+  color: #ffffff;
+  border: none;
+  padding: 15px 34px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 12px 24px rgba(31,122,95,0.25);
+  transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+  background: #16624B;
+  transform: translateY(-2px);
+  box-shadow: 0 18px 32px rgba(31,122,95,0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #0B1F3A;
+  color: #0B1F3A;
+  padding: 15px 34px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-secondary:hover {
+  background: #0B1F3A;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+        /* ================= SECTIONS ================= */
+        section {
+            padding: 90px;
+            background-color: #ffffff;
+        }
+
+        section.alt {
+            background-color: var(--background);
+        }
+
+        section h2 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 34px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 20px;
+        }
+
+        section p {
+            max-width: 900px;
+            margin-bottom: 18px;
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            background-color: var(--footer-dark);
+            color: #E5E7EB;
+            padding: 80px 90px;
+        }
+		
+		.what-we-do {
+  background: #ffffff;
+  padding: 100px;
+  border-radius: 12px;
+  margin: 60px auto;
+  max-width: 1200px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+}
+
+.what-we-do p {
+  max-width: 850px;
+  font-size: 17px;
+}
+    </style>
+	
+	
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+     <nav>
+    <div class="brand">DIGITAL GROWTH</div>
+
+    <ul class="nav-menu">
+      <li><a href="/">Home</a></li>
+
+      <li class="mega-menu">
+  <a href="/services">Services</a>
+
+  <div class="mega-dropdown">
+
+    <!-- LEFT SIDE : CATEGORIES -->
+    <ul class="mega-categories">
+      <li class="active" data-menu="branding">Branding & Web</li>
+      <li data-menu="marketing">Digital Marketing</li>
+      <li data-menu="paid">Paid Advertising</li>
+      <li data-menu="social">Social Media Management</li>
+      <li data-menu="email">Email & Automation</li>
+      <li data-menu="software">Software & Automation</li>
+      <li data-menu="analytics">Analytics & Growth</li>
+    </ul>
+
+    <!-- RIGHT SIDE : SUB-CATEGORIES -->
+    <div class="mega-content">
+
+      <!-- Branding -->
+      <div class="mega-panel active" id="branding">
+        <a href="/services/website-design-development">Website Design & Development</a>
+        <a href="/services/logo-brand-identity">Company Logo & Brand Identity</a>
+        <a href="/services/ui-ux-design">UI / UX Design</a>
+        <a href="/services/business-email-setup">Business Email Setup</a>
+        <a href="/services/website-maintenance">Website Maintenance & Support</a>
+      </div>
+
+      <!-- Digital Marketing -->
+      <div class="mega-panel" id="marketing">
+        <a href="/services/digital-marketing-strategy">Digital Marketing Strategy</a>
+        <a href="/services/seo-services-uk">Search Engine Optimisation (SEO)</a>
+        <a href="/services/local-seo-uk">Local SEO (UK Focused)</a>
+        <a href="/services/social-media-marketing">Social Media Marketing</a>
+        <a href="/services/content-marketing">Content Marketing</a>
+      </div>
+
+      <!-- Paid Advertising -->
+      <div class="mega-panel" id="paid">
+        <a href="/services/google-ads-management">Google Ads Management</a>
+        <a href="/services/meta-ads">Meta Ads (Facebook & Instagram)</a>
+        <a href="/services/linkedin-ads-b2b">LinkedIn Ads (B2B UK)</a>
+        <a href="/services/paid-campaign-optimisation">Paid Campaign Optimisation</a>
+        <a href="/services/retargeting-funnel-ads">Retargeting & Funnel Ads</a>
+      </div>
+
+      <!-- Social Media -->
+      <div class="mega-panel" id="social">
+        <a href="/services/daily-social-media-posts">Daily Social Media Posts</a>
+        <a href="/services/holiday-special-posts">Holiday & Special Day Posts</a>
+        <a href="/services/social-media-page-management">Social Media Page Management</a>
+        <a href="/services/content-calendar-planning">Content Calendar Planning</a>
+        <a href="/services/community-engagement">Engagement & Community Management</a>
+      </div>
+
+      <!-- Email -->
+      <div class="mega-panel" id="email">
+        <a href="/services/email-marketing-campaigns">Email Marketing Campaigns</a>
+        <a href="/services/email-automation-setup">Email Automation Setup</a>
+        <a href="/services/newsletter-management">Newsletter Management</a>
+        <a href="/services/crm-lead-automation">CRM & Lead Automation</a>
+        <a href="/services/customer-follow-up">Customer Follow-up Automation</a>
+      </div>
+
+      <!-- Software -->
+      <div class="mega-panel" id="software">
+        <a href="/services/custom-software-development">Custom Software Development</a>
+        <a href="/services/web-applications-dashboards">Web Applications & Dashboards</a>
+        <a href="/services/crm-erp-solutions">CRM & ERP Solutions</a>
+        <a href="/services/workflow-automation">Workflow Automation</a>
+        <a href="/services/api-integration">API Integration</a>
+      </div>
+
+      <!-- Analytics -->
+      <div class="mega-panel" id="analytics">
+        <a href="/services/google-analytics-setup">Google Analytics Setup</a>
+        <a href="/services/conversion-tracking">Conversion Tracking</a>
+        <a href="/services/live-growth-dashboard">Live Growth Dashboard</a>
+        <a href="/services/monthly-performance-reports">Monthly Performance Reports</a>
+        <a href="/services/roi-funnel-analysis">ROI & Funnel Analysis</a>
+      </div>
+
+    </div>
+  </div>
+</li>
+
+
+      <li><a href="/case-studies">Case Studies</a></li>
+      <li><a href="/insights">Insights</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+    <h1>
+  We Help Ambitious UK Businesses<br>
+  Scale Faster With Digital Marketing
+</h1>
+    <p>
+  Digital Growth is a UK-focused digital marketing agency working with
+  ambitious brands that want measurable growth, stronger visibility,
+  and long-term digital success.
+</p>
+<p style="font-size:15px; opacity:0.8;">
+  Strategy-led. Data-driven. Built for long-term growth.
+</p>
+
+    <div class="hero-actions">
+  <button class="btn-primary">Get a Free Consultation</button>
+  <button class="btn-secondary">View Our Services</button>
+</div>
+
+<div class="hero-trust">
+  <span>✔ UK-focused strategies</span>
+  <span>✔ Transparent reporting</span>
+  <span>✔ ROI-driven campaigns</span>
+</div>
+</section>
+
+<!-- ================= WHAT WE DO ================= -->
+<section class="what-we-do">
+    <h2>What We Do</h2>
+    <p>
+        At Digital Growth, we help UK businesses navigate the digital landscape
+        with clarity and purpose. Our role goes beyond running campaigns — we
+        work as a strategic partner focused on long-term growth and measurable
+        outcomes.
+    </p>
+    <p>
+        We begin by understanding your business, industry, and audience. Based
+        on this insight, we design tailored digital strategies that align with
+        your commercial goals. From building a strong online presence to
+        generating high-quality leads, every activity is driven by data,
+        transparency, and performance.
+    </p>
+    <p>
+        Whether you are a startup looking to establish credibility or an
+        established company aiming to scale, our team supports you through SEO,
+        paid advertising, social media management, email marketing, and growth
+        analytics — all under one roof.
+    </p>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <p>
+        Digital Growth is a UK-based digital marketing agency delivering
+        strategy-led, performance-focused growth solutions.
+    </p>
+    <p>© 2026 Digital Growth. All rights reserved.</p>
+</footer>
+
+<script>
+  const categories = document.querySelectorAll('.mega-categories li');
+  const panels = document.querySelectorAll('.mega-panel');
+
+  categories.forEach(cat => {
+    cat.addEventListener('mouseenter', () => {
+      categories.forEach(c => c.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+
+      cat.classList.add('active');
+      document.getElementById(cat.dataset.menu).classList.add('active');
+    });
+  });
+</script>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
