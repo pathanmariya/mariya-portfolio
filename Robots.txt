@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://digitalmarketing010.netlify.app/sitemap.xml
