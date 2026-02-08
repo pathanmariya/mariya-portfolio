@@ -10,6 +10,24 @@ html, body {
   overflow-x: hidden;
 }
 
+/* =========================
+   FONT CLS FIX (GLOBAL)
+========================= */
+
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+}
+
 
 main#main-content {
   display: block;
@@ -22,13 +40,16 @@ main#main-content {
 body{
   background:var(--bg);
   color:var(--text);
-  font-family:Inter, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 h1,h2,h3,h4{
-  font-family:Manrope, sans-serif;
+  font-family: 'Manrope', system-ui, sans-serif;
   color:var(--heading);
 }
+
+
+
 @media (max-width: 768px) {
   html, body {
     overflow-x: hidden !important;
@@ -49,6 +70,7 @@ h1,h2,h3,h4{
 .hero h1{
   font-size:3rem;
 }
+
 
 .btn-main {
   background: var(--cta);
@@ -288,7 +310,7 @@ h1,h2,h3,h4{
   border-left: 6px solid var(--cta);
 }
 
-.hero-highlight h4 {
+.hero-highlight h2 {
   font-family: Manrope;
   font-weight: 800;
   font-size: 1.5rem;
@@ -355,6 +377,8 @@ h1,h2,h3,h4{
   content: "";
   position: absolute;
   inset: 0;
+   width: 100%;
+  height: 100%;
   background:
     radial-gradient(
       circle at 85% 30%,
@@ -1547,76 +1571,65 @@ h1,h2,h3,h4{
 }
 
 /* ===============================
-   PREMIUM WHATSAPP FLOAT BUTTON
+   WHATSAPP FLOAT – ICON ONLY
 ================================ */
 
 .wa-float-premium {
   position: fixed;
-  bottom: 20px;
-  right: 17px;
+  right: 28px;
+  bottom: 18px;
+
+  width: 48px;
+  height: 48px;
 
   display: flex;
   align-items: center;
-  gap: 8px;
-
-  padding: 12px 16px;
-  border-radius: 999px;
+  justify-content: center;
 
   background: #25d366;
   color: #ffffff;
 
-  font-weight: 600;
-  font-size: 0.9rem;
+  border-radius: 50%;
   text-decoration: none;
 
-  box-shadow: 0 18px 40px rgba(37,211,102,0.35);
+  box-shadow: 0 14px 34px rgba(37, 211, 102, 0.35);
   z-index: 9999;
 
-  transition: all 0.35s ease;
-  animation: softPulse 2s infinite;
-  min-width: 140px;
-  height: 48px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: softPulse 2.2s infinite;
 }
 
+/* Pulse (clean & premium) */
 @keyframes softPulse {
-  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.4); }
-  70% { box-shadow: 0 0 0 10px rgba(37,211,102,0); }
+  0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.35); }
+  70%  { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
   100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
 }
 
-/* icon */
+/* Icon */
 .wa-float-premium i {
-  font-size: 1.1rem;
-}
-
-/* Accessibility contrast fix */
-.wa-float-premium span {
-  color: #ffffff;           /* pure white */
-  background: transparent;  /* no bg clash */
+  font-size: 35px;
   line-height: 1;
 }
 
-
-/* Hover = calm luxury */
-.wa-float-premium:hover {
-  transform: translate3d(0, -4px, 0);
-  box-shadow: 0 28px 60px rgba(37,211,102,0.45);
+/* REMOVE TEXT COMPLETELY */
+.wa-float-premium span {
+  display: none !important;
 }
 
-/* subtle glow ring */
-.wa-float-premium::after {
-  content: "";
-  position: absolute;
-  inset: -6px;
-  border-radius: 999px;
-  border: 1px solid rgba(37,211,102,0.25);
-  opacity: 0;
-  transition: opacity 0.35s ease;
+/* Hover (desktop only feel) */
+@media (hover: hover) {
+  .wa-float-premium:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 26px 60px rgba(37,211,102,0.45);
+  }
 }
 
-.wa-float-premium:hover::after {
-  opacity: 1;
+/* Tap feedback (mobile) */
+.wa-float-premium:active {
+  transform: scale(0.94);
 }
+
 
 /* Mobile polish */
 @media (max-width: 768px) {
@@ -1634,39 +1647,57 @@ h1,h2,h3,h4{
 ================================ */
 @media (max-width: 768px) {
 
-  /* WhatsApp – icon only, premium */
   .wa-float-premium {
-    right: 20px;
-    bottom: 20px;
+    position: fixed;
+    right: 18px;
+    bottom: 24px;
 
-    width: 56px;
-    height: 56px;
-    padding: 0;
+    /* 🔥 IMPORTANT RESET */
+    min-width: unset !important;
+    max-width: unset !important;
 
-    border-radius: 50%;
+    width: 44px !important;
+    height: 44px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    border-radius: 50% !important;
+    background: #25D366;
+
+    display: flex;
+    align-items: center;
     justify-content: center;
 
-    animation: none; /* ❌ pulse off on mobile */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    animation: none;
+
+    z-index: 9999;
   }
 
   .wa-float-premium span {
-    display: none; /* text hide */
+    display: none !important;
   }
 
   .wa-float-premium i {
-    font-size: 24px;
+    font-size: 20px;
+    line-height: 1;
+    color: #ffffff;
   }
 
-  /* Back to Top – perfectly above WhatsApp */
   #backToTop {
-    right: 20px;
-    bottom: 92px;
+    right: 18px;
+    bottom: 82px;
 
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
   }
-
 }
+
+
+
 
 /* ================================
    GLOBAL CURSOR GLOW EFFECT
@@ -1699,7 +1730,7 @@ h1,h2,h3,h4{
 }
 
 /* ===============================
-   CUSTOM DOT CURSOR (PREMIUM)
+   ELITE SIGNATURE CURSOR
 ================================ */
 
 .custom-cursor-dot,
@@ -1710,40 +1741,138 @@ h1,h2,h3,h4{
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
+  will-change: transform;
 }
 
-/* Center DOT */
+/* Core DOT */
 .custom-cursor-dot {
   width: 6px;
   height: 6px;
-  background: #1f7a5f; /* CTA color */
+  background: #1f7a5f;
   border-radius: 50%;
+  box-shadow: 0 0 10px rgba(31,122,95,0.8);
 }
 
-/* Floating circle (trail) */
+/* Outer Ring */
 .custom-cursor-circle {
-  width: 36px;
-  height: 36px;
-  border: 2px solid rgba(31, 122, 95, 0.45);
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  transition: transform 0.15s ease-out;
+  border: 1.8px solid rgba(31,122,95,0.45);
+  box-shadow:
+    0 0 22px rgba(31,122,95,0.25),
+    inset 0 0 14px rgba(31,122,95,0.18);
+  transition:
+    width 0.25s ease,
+    height 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-/* Hide default cursor */
+/* Hover – CTA / Buttons */
+.cursor-cta .custom-cursor-circle {
+  width: 56px;
+  height: 56px;
+  border-color: transparent;
+  background: rgba(31,122,95,0.18);
+  box-shadow:
+    0 0 32px rgba(31,122,95,0.5);
+}
+
+/* Hover – Cards */
+.cursor-card .custom-cursor-circle {
+  width: 52px;
+  height: 52px;
+  border-color: rgba(31,122,95,0.7);
+}
+
+/* Hover – Text precision */
+.cursor-text .custom-cursor-circle {
+  width: 28px;
+  height: 28px;
+  border-width: 1px;
+}
+
+/* Desktop only */
 @media (min-width: 992px) {
-  body {
-    cursor: none;
-  }
+  body { cursor: none; }
 }
 
-/* Disable on mobile */
+/* Disable mobile */
 @media (max-width: 991px) {
   .custom-cursor-dot,
   .custom-cursor-circle {
     display: none;
   }
+  body { cursor: auto; }
+}
 
-  body {
-    cursor: auto;
-  }
+/* SECTION LEVEL MOODS */
+
+/* About – calm trust */
+.cursor-about .custom-cursor-circle {
+  border-color: rgba(31,122,95,0.6);
+  box-shadow: 0 0 26px rgba(31,122,95,0.35);
+}
+
+/* Services – energy */
+.cursor-services .custom-cursor-circle {
+  width: 58px;
+  height: 58px;
+  box-shadow: 0 0 36px rgba(31,122,95,0.55);
+}
+
+/* Process – precision */
+.cursor-process .custom-cursor-circle {
+  width: 34px;
+  height: 34px;
+  border-width: 1.2px;
+}
+
+/* Contact – confidence */
+.cursor-contact .custom-cursor-circle {
+  background: rgba(31,122,95,0.18);
+  border-color: transparent;
+}
+
+/* ===============================
+   HERO BUTTON HOVER FIX
+================================ */
+
+.hero .btn {
+  position: relative;
+  z-index: 2;
+}
+
+/* Kill any overlay coming from button */
+.hero .btn::before,
+.hero .btn::after {
+  content: none !important;
+}
+
+/* Text should never trigger button hover */
+.hero h1,
+.hero p,
+.hero h1 span {
+  position: relative;
+  z-index: 1;
+}
+
+.hero .col-lg-6 {
+  position: relative;
+}
+
+/* Ensure no element overlaps text */
+.hero .col-lg-6 > * {
+  pointer-events: auto;
+}
+
+/* If still hover leaks, this ends it */
+.hero h1,
+.hero p {
+  pointer-events: auto;
+}
+
+.hero .btn {
+  pointer-events: auto;
 }
