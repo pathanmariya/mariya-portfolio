@@ -54,43 +54,107 @@
   backToTop.addEventListener("click", smoothScrollToTop);
 
 
-// Create cursor elements
 const dot = document.createElement("div");
 const circle = document.createElement("div");
 
 dot.className = "custom-cursor-dot";
 circle.className = "custom-cursor-circle";
 
-document.body.appendChild(circle);
-document.body.appendChild(dot);
+document.body.append(circle, dot);
 
-// Mouse positions
-let mouseX = 0;
-let mouseY = 0;
+let mouseX = 0, mouseY = 0;
+let circleX = 0, circleY = 0;
+let lastX = 0, lastY = 0;
 
-// Circle positions (alag rakhe for delay)
-let circleX = 0;
-let circleY = 0;
-
-// DOT = instant move
+// Mouse tracking
 document.addEventListener("mousemove", (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
 
-  dot.style.left = mouseX + "px";
-  dot.style.top = mouseY + "px";
+  dot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
 });
 
-// CIRCLE = delayed smooth follow
+// Animation loop
 function animate() {
-  circleX += (mouseX - circleX) * 0.08; // 👈 delay control (LOW = more delay)
+  // Velocity
+  const dx = mouseX - lastX;
+  const dy = mouseY - lastY;
+  const speed = Math.min(Math.sqrt(dx*dx + dy*dy) / 10, 1.5);
+
+  circleX += (mouseX - circleX) * 0.08;
   circleY += (mouseY - circleY) * 0.08;
 
-  circle.style.left = circleX + "px";
-  circle.style.top = circleY + "px";
+  circle.style.transform =
+    `translate(${circleX}px, ${circleY}px) scale(${1 + speed * 0.15})`;
+
+  lastX = mouseX;
+  lastY = mouseY;
 
   requestAnimationFrame(animate);
 }
-
 animate();
 
+/* CONTEXT AWARE INTERACTIONS */
+const CTA = document.querySelectorAll(".btn, .cta-btn");
+const cards = document.querySelectorAll(".service-card, .process-card, .why-card");
+const text = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, span");
+
+CTA.forEach(el => {
+  el.addEventListener("mouseenter", () =>
+    document.body.classList.add("cursor-cta")
+  );
+  el.addEventListener("mouseleave", () =>
+    document.body.classList.remove("cursor-cta")
+  );
+});
+
+cards.forEach(el => {
+  el.addEventListener("mouseenter", () =>
+    document.body.classList.add("cursor-card")
+  );
+  el.addEventListener("mouseleave", () =>
+    document.body.classList.remove("cursor-card")
+  );
+});
+
+text.forEach(el => {
+  el.addEventListener("mouseenter", () =>
+    document.body.classList.add("cursor-text")
+  );
+  el.addEventListener("mouseleave", () =>
+    document.body.classList.remove("cursor-text")
+  );
+});
+
+/* SECTION AWARE CURSOR */
+
+const sectionMap = [
+  { id: "about", className: "cursor-about" },
+  { id: "services", className: "cursor-services" },
+  { id: "process", className: "cursor-process" },
+  { id: "contact", className: "cursor-contact" }
+];
+
+sectionMap.forEach(sec => {
+  const el = document.getElementById(sec.id);
+  if (!el) return;
+
+  el.addEventListener("mouseenter", () => {
+    document.body.classList.add(sec.className);
+  });
+
+  el.addEventListener("mouseleave", () => {
+    document.body.classList.remove(sec.className);
+  });
+});
+
+const footer = document.querySelector(".dg-footer");
+
+if (footer) {
+  footer.addEventListener("mouseenter", () => {
+    document.body.classList.add("cursor-contact");
+  });
+  footer.addEventListener("mouseleave", () => {
+    document.body.classList.remove("cursor-contact");
+  });
+}
