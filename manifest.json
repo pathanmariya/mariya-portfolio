@@ -1,0 +1,21 @@
+{
+  "name": "Magnetiq Marketing",
+  "short_name": "Magnetiq",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F7FA",
+  "theme_color": "#1F7A5F",
+  "description": "Birmingham-based digital marketing agency helping UK solicitors, clinics and service businesses grow through SEO and Google Ads.",
+  "icons": [
+    {
+      "src": "/magnetiq-marketing-favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/magnetiq-marketing-apple-touch.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
