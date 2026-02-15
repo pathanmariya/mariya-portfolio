@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://digitalgrowth010.netlify.app/sitemap.xml
+# Important Pages
+Allow: /index.html
+
+# Sitemap
+Sitemap: https://magnetiqmarketing.co.uk/sitemap.xml
